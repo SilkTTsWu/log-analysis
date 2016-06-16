@@ -8,14 +8,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.junit.Test;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
 import cn.tarena.ca.pojo.DataByHours;
+
 
 /**
  * 此工具类将json文本文件按行读入,并将其转换为Java数组。
@@ -67,13 +66,13 @@ public class JsonToArray {
 	/**
 	 * 测试方法
 	 */
-	@Test
+	/*@Test
 	public void test() {
 		List<DataByHours> list = readJsonToArray("d:/temp/data_by_hours.json");
 		System.out.println(list.get(0));
 		DataByHours dbh = (DataByHours) list.get(0);
 		System.out.println(dbh.getPv());
-	}
+	}*/
 	
 	
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tarena.ca.mapper.IspMapper">
+	<insert id="insertIsp" useGeneratedKeys="true" keyProperty="id">
+		insert into isp_info(id,name,isp_id)values
+		(id=#{id},name=#{name},isp_id={isp_id})
+	</insert>
+
+	<delete id="deleteIspByPrimaryKey" parameterType="int">
+		delete from isp_info where
+		id=#{id}
+	</delete>
+
+	<update id="updateIspByPrimaryKey" parameterType="int">
+		update isp_info set
+		name=#{name},isp_id=#{isp_id} where id=#{id}
+	</update>
+
+	<select id="selectIspByPrimaryKey" parameterType="int">
+		select * from isp_info
+		where id=#{id}
+	</select>
+
+	<select id="selectAllIsps" resultType="list">
+		select * from isp_info
+	</select>
+</mapper>

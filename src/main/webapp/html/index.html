@@ -235,9 +235,15 @@
 							<i class="ace-icon fa fa-users"></i>
 						</button>
 
-						<button class="btn btn-danger">
+						<!-- 这里做了个临时的后台入口,v2.0 -->
+						<button class="btn btn-danger" onclick="tz()">
 							<i class="ace-icon fa fa-cogs"></i>
 						</button>
+						<script>
+							function tz(){
+								window.location.href='backstage_ip.html';
+							}
+						</script>
 
 						<!-- /section:basics/sidebar.layout.shortcuts -->
 					</div>

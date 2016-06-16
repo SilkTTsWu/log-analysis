@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tarena.ca.mapper.IpMapper">
+
+	<insert id="insertIp" useGeneratedKeys="true" keyProperty="id">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">  
+          SELECT LAST_INSERT_ID() AS ID
+		</selectKey> 
+		insert into ip_info
+		(name,country_id,region_id,city_id,county_id,isp_id) values
+		(#{name},#{countryId},#{regionId},#{cityId},#{countyId},#{ispId})
+	</insert>
+
+	<delete id="deleteIpByPrimaryKey" parameterType="int">
+		delete from
+		ip_info where
+		id=#{id}
+	</delete>
+
+	<update id="updateIpByPrimaryKey" parameterType="iplibrary">
+		<!-- <update id="updateIpByPrimaryKey" parameterType="cn.tarena.ca.pojo.Iplibrary"> -->
+		update ip_info
+		set
+		name=#{name},conuntry_id=#{countryId},region_id=#{regionId},city_id=#{cityId},county_id=#{countyId},isp_id=#{ispId}
+		where id = #{id}
+	</update>
+
+	<select id="selectIpByPrimaryKey" parameterType="int"
+		resultType="IpLibrary">
+		select * from
+		ip_info
+		where id =
+		#{id}
+	</select>
+
+	<select id="selectIpByName" parameterType="string" resultType="IpLibrary">
+		select * from ip_info
+		where name = #{name}
+	</select>
+
+	<select id="selectAllIps" resultType="IpLibrary">
+		select * from ip_info
+	</select>
+
+
+</mapper>
